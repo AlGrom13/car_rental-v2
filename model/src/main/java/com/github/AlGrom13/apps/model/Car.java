@@ -5,7 +5,9 @@ public class Car {
     private String brand;
     private String model;
     private String releaseDate;
+    private String registerNumber;
     private int pricePerDay;
+    private CarHistory carHistory;
 
     public Car(Long carId, String brand, String model, String releaseDate, int pricePerDay) {
         this.carId = carId;
@@ -13,6 +15,14 @@ public class Car {
         this.model = model;
         this.releaseDate = releaseDate;
         this.pricePerDay = pricePerDay;
+    }
+
+    public Long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(Long carId) {
+        this.carId = carId;
     }
 
     public String getBrand() {
@@ -29,5 +39,25 @@ public class Car {
 
     public int getPricePerDay() {
         return pricePerDay;
+    }
+
+    public void setPricePerDay(int pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public String getRegisterNumber() {
+        return registerNumber;
+    }
+
+    public void setRegisterNumber(String registerNumber) {
+        this.registerNumber = registerNumber;
+    }
+
+    public CarHistory getCarHistory() {
+        return carHistory;
+    }
+
+    public void setCarHistory(CarHistory carHistory) {
+        this.carHistory = carHistory;
     }
 }

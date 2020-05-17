@@ -1,7 +1,8 @@
 package com.github.AlGrom13.apps.model;
 
-public enum CarRequestStatus {
+public enum CarOrderStatus {
     PROCESSING,
     DENY,
-    ACCEPT
+    ACCEPT,
+    COMPLETED
 }

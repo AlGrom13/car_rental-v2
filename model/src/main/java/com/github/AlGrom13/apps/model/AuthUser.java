@@ -5,18 +5,23 @@ public class AuthUser {
     private String login;
     private String password;
     private Role role;
-    private Long clientId;
+    private Client client;
 
-    public AuthUser(Long id, String login, String password, Role role, Long clientId) {
+
+    public AuthUser(Long id, String login, String password, Role role, Client client) {
         this.id = id;
         this.login = login;
         this.password = password;
         this.role = role;
-        this.clientId = clientId;
+        this.client = client;
     }
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLogin() {
@@ -27,11 +32,19 @@ public class AuthUser {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Role getRole() {
         return role;
     }
 
-    public Long getClientId() {
-        return clientId;
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
