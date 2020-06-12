@@ -1,12 +1,16 @@
 package com.github.AlGrom13.apps.model;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CarOrderInfo {
     private CarOrder carOrder;
-    private Date beginDate;
-    private Date endDate;
+    private LocalDateTime beginDate;
+    private LocalDateTime endDate;
     private int totalPrice;
+
+    public CarOrderInfo() {
+
+    }
 
     public CarOrderInfo(CarOrder carOrder) {
         this.carOrder = carOrder;
@@ -20,19 +24,19 @@ public class CarOrderInfo {
         this.carOrder = carOrder;
     }
 
-    public Date getBeginDate() {
+    public LocalDateTime getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(Date beginDate) {
+    public void setBeginDate(LocalDateTime beginDate) {
         this.beginDate = beginDate;
     }
 
-    public Date getEndDate() {
+    public LocalDateTime getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(LocalDateTime endDate) {
         this.endDate = endDate;
     }
 

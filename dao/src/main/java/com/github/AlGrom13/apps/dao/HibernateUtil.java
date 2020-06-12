@@ -15,7 +15,7 @@ public class HibernateUtil {
 
     private static EntityManager getEntityManager() {
         if (entityManagerFactory == null) {
-            entityManagerFactory = Persistence.createEntityManagerFactory("by.it");
+            entityManagerFactory = Persistence.createEntityManagerFactory("app.dao");
         }
         return entityManagerFactory.createEntityManager();
     }

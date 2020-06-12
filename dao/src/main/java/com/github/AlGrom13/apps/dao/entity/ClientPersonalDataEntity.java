@@ -1,27 +1,38 @@
-package com.github.AlGrom13.apps.model;
+package com.github.AlGrom13.apps.dao.entity;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
 
-public class ClientPersonalData {
+import javax.persistence.*;
+
+@Entity
+@Table(name = "client_personal_data")
+public class ClientPersonalDataEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
+
+    @Column(name = "date_of_birth")
     private LocalDateTime dateOfBirth;
+
+    @Column(name = "nationality")
     private String nationality;
+
+    @Column(name = "passport_number")
     private String passportNumber;
+
+    @CreationTimestamp
+    @Column(name = "validity_date")
     private LocalDateTime validityDate;
-    private Client client;
 
-    public ClientPersonalData(Client client) {
-        this.client = client;
-    }
+    @OneToOne(fetch = FetchType.EAGER)
+    @Column(name = "client_id")
+    private ClientEntity clientEntity;
 
-    public ClientPersonalData(Long id, LocalDateTime dateOfBirth, String nationality,
-                              String passportNumber, LocalDateTime validityDate, Client client) {
-        this.id = id;
-        this.dateOfBirth = dateOfBirth;
-        this.nationality = nationality;
-        this.passportNumber = passportNumber;
-        this.validityDate = validityDate;
-        this.client = client;
+    public ClientPersonalDataEntity() {
+
     }
 
     public Long getId() {
@@ -64,11 +75,11 @@ public class ClientPersonalData {
         this.validityDate = validityDate;
     }
 
-    public Client getClient() {
-        return client;
+    public ClientEntity getClientEntity() {
+        return clientEntity;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientEntity(ClientEntity clientEntity) {
+        this.clientEntity = clientEntity;
     }
 }

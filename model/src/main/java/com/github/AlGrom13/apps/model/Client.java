@@ -1,5 +1,7 @@
 package com.github.AlGrom13.apps.model;
 
+import java.util.List;
+
 public class Client {
     private Long id;
     private String lastName;
@@ -7,7 +9,8 @@ public class Client {
     private Sex sex;
     private AuthUser authUser;
     private ClientPersonalData clientPersonalData;
-    private ClientHistory clientHistory;
+    private List<Car> rentedCars;
+    private List<CarOrder> orders;
 
     public Client(Long id, String lastName, String firstName, Sex sex, ClientPersonalData clientPersonalData) {
         this.id = id;
@@ -65,11 +68,19 @@ public class Client {
         this.clientPersonalData = clientPersonalData;
     }
 
-    public ClientHistory getClientHistory() {
-        return clientHistory;
+    public List<Car> getRentedCars() {
+        return rentedCars;
     }
 
-    public void setClientHistory(ClientHistory clientHistory) {
-        this.clientHistory = clientHistory;
+    public void setRentedCars(List<Car> rentedCars) {
+        this.rentedCars = rentedCars;
+    }
+
+    public List<CarOrder> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<CarOrder> orders) {
+        this.orders = orders;
     }
 }

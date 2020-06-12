@@ -21,11 +21,11 @@ public class AdminConverter {
         if (authUser == null) {
             return null;
         }
-        final AdminEntity authUserEntity = new AdminEntity();
-        authUserEntity.setId(authUser.getId());
-        authUserEntity.setLogin(authUser.getLogin());
-        authUserEntity.setPassword(authUser.getPassword());
-        authUserEntity.setRole(authUser.getRole());
-        return authUserEntity;
+        final AdminEntity adminEntity = new AdminEntity();
+        adminEntity.setId(authUser.getId());
+        adminEntity.setLogin(authUser.getLogin());
+        adminEntity.setPassword(authUser.getPassword());
+        adminEntity.setRole(authUser.getRole());
+        return adminEntity;
     }
 }

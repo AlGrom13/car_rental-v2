@@ -26,8 +26,7 @@ public class DefaultAdminDao implements AdminDao {
     public AuthUser getByLogin(String login) {
         AdminEntity adminEntity;
         try {
-            adminEntity = (AdminEntity) HibernateUtil
-                    .getSession()
+            adminEntity = (AdminEntity) HibernateUtil.getSession()
                     .createQuery("from AdminEntity a where a.login = :login")
                     .setParameter("login", login)
                     .getSingleResult();
